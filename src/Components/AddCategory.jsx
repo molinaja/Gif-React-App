@@ -13,7 +13,7 @@ const addCategory = ({ onNewCategory }) => {
         event.preventDefault();
 
         if (inputValue.trim().length == 0 ) {
-            setErrorMsn('Para la bnusqueda debe haber al menos un caracter')
+            setErrorMsn('Para la busqueda debe haber al menos un caracter')
             console.log(errorMsn);
             return;
 
