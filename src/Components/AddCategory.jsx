@@ -1,33 +1,30 @@
 import { Component, useState } from "react";
 
-const addCategory = ({ onNewCategory }) => {
+const addCategory = ({ onNewCategory,  onErrorMsn}) => {
 
-    const [inputValue, setInputValue] = useState('');
-    const [errorMsn, setErrorMsn] = useState('');
+    const [inputValue, setInputValue] = useState('');  
     
     const onChangeInputValue = ({ target }) => {
+        onErrorMsn('');
         setInputValue(target.value.trim())
     }
 
     const onSubmit = (event) => {
         event.preventDefault();
 
-        if (inputValue.trim().length == 0 ) {
-            setErrorMsn('Para la busqueda debe haber al menos un caracter')
-            console.log(errorMsn);
-            return;
+        let errormsn = '';
+        if (inputValue.trim().length === 0 ) {
+            
+            errormsn = "Debe haber minimo un caracter";
+            onErrorMsn(errormsn);
+        }else{
+
+            onNewCategory(inputValue.trim());
 
         }
-
-        setErrorMsn('')
-
-        //onAddCategories(
-            //(cat) => [
-                //inputValue, ...cat
-           // ]
-        //);
-        onNewCategory(inputValue.trim());
+        
         setInputValue('');
+
     }
 
     return (
@@ -39,7 +36,6 @@ const addCategory = ({ onNewCategory }) => {
                 value={inputValue}
                 onChange={(event) => onChangeInputValue(event)}
             />
-            <a>{errorMsn}</a>
         </form>
     )
 }
