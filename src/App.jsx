@@ -21,7 +21,6 @@ function App() {
         value, ...cat
       ]
     );
-    //setCategories( ['NuevaCat', ...categories])
 
   }
 
