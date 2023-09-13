@@ -20,7 +20,7 @@ function App() {
 
     setCategories(
       (cat) => [
-        value, ...cat
+        value.trim(), ...cat
       ]
     );
 
