@@ -1,10 +1,12 @@
-import { useState } from 'react'
-import AddCategory from './Components/AddCategory'
-import GifGrid  from './Components/GifGrid';
+import { useState } from 'react';
+import { AddCategory, GifGrid } from './Components';
+//import {GifGrid}  from './Components/GifGrid';
+//import {AddCategory}  from './Components/AddCategory';
+
 
 function App() {
 
-  const [categories, setCategories] = useState(['Valorant'])
+  const [categories, setCategories] = useState(['Saitama'])
   const [errorMsn, setErrorMsn] = useState('');
 
   const onAddCategory = (value) => {

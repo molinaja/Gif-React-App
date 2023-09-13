@@ -1,12 +1,12 @@
 import { Component, useState } from "react";
 
-const addCategory = ({ onNewCategory,  onErrorMsn}) => {
+export const AddCategory = ({ onNewCategory,  onErrorMsn}) => {
 
     const [inputValue, setInputValue] = useState('');  
     
     const onChangeInputValue = ({ target }) => {
         onErrorMsn('');
-        setInputValue(target.value.trim())
+        setInputValue(target.value)
     }
 
     const onSubmit = (event) => {
@@ -40,4 +40,4 @@ const addCategory = ({ onNewCategory,  onErrorMsn}) => {
     )
 }
 
-export default addCategory
+//export default AddCategory
