@@ -8,7 +8,6 @@ export const AddCategory = ({ onNewCategory,  onErrorMsn}) => {
     const onChangeInputValue = ({ target }) => {
         onErrorMsn('');
         setInputValue(target.value)
-        console.log('hola desde change');
     }
 
     const onSubmit = (event) => {
@@ -20,8 +19,7 @@ export const AddCategory = ({ onNewCategory,  onErrorMsn}) => {
         if (inputValue.trim().length === 0 ) {
             
             errormsn = "Debe haber minimo un caracter";
-           onErrorMsn(errormsn);
-           console.log('hola desde error');
+            onErrorMsn(errormsn);
         }else{
 
             onNewCategory(inputValue.trim());
